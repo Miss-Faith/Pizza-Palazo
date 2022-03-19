@@ -2,12 +2,10 @@ body {
   background-image: url('../images/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  height: 100vh;
 }
 
 #page-header {
-  width: 86%;
-  height: 60vh;
   padding-top: 30px;
 }
 
@@ -33,4 +31,17 @@ body {
   padding: 10px;
   margin: 1px;
   border: 1px;
+}
+
+#page-header {
+  padding: 10px;
+}
+
+.text-footer {
+  color: white;
+  padding: 10px;
+  margin: 1px;
+  border: 1px;
+  position: relative;
+  top: 50vh;
 }
