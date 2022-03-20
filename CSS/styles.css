@@ -5,19 +5,7 @@ body {
   height: 100vh;
 }
 
-#page-header {
-  padding-top: 30px;
-}
-
-#card {
-  padding: 0;
-}
-
-.hide {
-  display: none;
-}
-
-.text-header {
+.pizza-text {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 10px;
@@ -25,23 +13,7 @@ body {
   border: 1px;
 }
 
-.text-body {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 10px;
-  margin: 1px;
-  border: 1px;
-}
-
-#page-header {
-  padding: 10px;
-}
-
-.text-footer {
-  color: white;
-  padding: 10px;
-  margin: 1px;
-  border: 1px;
-  position: relative;
-  top: 50vh;
+.slide {
+  margin: 0px;
+  border: 0px;
 }
