@@ -1,6 +1,7 @@
 //Business logic
-
-function getPizzaOrder(number, flavour, size, crust, topping, total) {
+var sizePrice, crustPrice;
+let total = 0;
+function Pizzaorder(number, flavour, size, crust, topping, total) {
   this.flavour = flavour;
   this.size = size;
   this.crust = crust;
@@ -8,42 +9,49 @@ function getPizzaOrder(number, flavour, size, crust, topping, total) {
   this.total = total;
 }
 $(document).ready(function() {
-  $("button.add-pizza").click(function () {
-    let flavour = $(".flavour option:selected").val();
-    let size = $("#size option:selected").val();
-    let crust = $("#crust option:selected").val();
-    let topping = [];
-    $.each($("input[name='topping']:checked"), function(){
-       topping.push($(this).val());
-  });
-  topping.join(", "));
 
+  $("button.add-pizza").click(function(event) {
+    event.preventDefault();
+    let pizzaFlavour = $(".pizza-type option:selected").val();
+    let pizzaSize = $(".pizza-size option:selected").val();
+    let pizzaCrust = $(".pizza-crust").val();
+    let pizzaTopping = [];
+    $.each($("input[name='toppings']:checked"), function(){
+       pizzaTopping.push($(this).val());
+  });
+  pizzaTopping.join(", ");
 //Compute order price
-  switch (size) {
-    case "0":
-      price = 0;
+  switch (pizzaSize) {
     case "large":
-      price = 1200;
+      sizePrice = 1200;
     break;
     case "medium":
-      price = 1000;
+      sizePrice = 1000;
     break;
     case "small":
-      price = 800;
+      sizePrice = 800;
     break;
   }
-  switch (crust) {
+  switch (pizzaCrust) {
     case "plain":
-      price = 0;
+      crustPrice = 0;
     case "crispy":
-      price = 150;
+      crustPrice = 150;
     break;
     case "stuffed":
-      price = 200;
+      crustPrice = 200;
     break;
     case "gluten-free":
-      price = 200;
+      crustPrice = 200;
     break;
   }
-  let topping_value = topping.length * 50;
+  let topping_value = pizzaTopping.length * 50;
+
+//functions
+  $("button.add-pizza").click(function() {
+    $("button.add-pizza").hide();
+    $("#description").hide();
+    $("#order-details").show();
+  });
+  });
 });

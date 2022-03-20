@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="CSS/styles.css" type="text/css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 
   </head>
   <body>
@@ -73,7 +73,7 @@
     </div>
     <br>
 <!--Order Menu-->
-    <div class="Container-fluid order" id="order-details">
+    <div class="Container-fluid make-order-details">
       <div>
         <h2>Place your Order Here</h2>
       </div>
@@ -83,7 +83,7 @@
             <form action="">
               <div class="form-group">
                 <label for="pizza-type">Pizza Flavour</label><br>
-                <select class="" name="pizza-type">
+                <select class="pizza-type" name="pizza-type" required>
                   <optgroup label="Meaty-Pizzas">
                     <option value="pizza-flavour">Pepperoni</option>
                     <option value="pizza-flavour">Sausage & Bacon</option>
@@ -102,7 +102,7 @@
                 </select>
                 <div class="form-group">
                   <label for="pizza-size">Pizza size:</label><br>
-                  <select class="pizza-size" name="pizza-size">
+                  <select class="pizza-size" name="pizza-size" required>
                     <option value="large">Large -- Ksh.1200</option>
                     <option value="medium">Medium -- Ksh.1000</option>
                     <option value="small">Small -- Ksh.800</option>
@@ -150,8 +150,8 @@
           </div>
         </div>
 
-        <div class="col-7">
-          <div id="description">
+        <div class="col-7" id="description">
+          <div>
               <p>Your order will be processed and delivered within one hour of placing.</p>
               <p>Make sure you have the total amout for the order during order delivery delivery.</p>
               <p>Incase of any comment of complaint, Please reach out to us as fast as possible.</p>
@@ -159,7 +159,7 @@
             </div>
         </div>
 
-        <div class="hide col-7">
+        <div class="hide col-7" id="order-details">
           <div>
             <h2>Your Order is:</h2>
             <div id="your-orders">
@@ -224,7 +224,7 @@
       </div>
     </div>
 <!--Footer-->
-    <div class="container-fluid d-flex justify-content-between footer">
+    <div class="container-fluid d-flex justify-content-center footer">
       <div>
         <div class="links">
           <i class="fa-brands fa-twitter"></i>
