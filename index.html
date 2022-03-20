@@ -85,12 +85,12 @@
               <input type="text" name="name" value="">
             </div>
             <div class="form-group">
-              <label for="pizza-type">Select Prefered Flavour</label>
-              <select class="" name="pizza-type">
+              <label for="pizza-type">Select Flavour</label>
+              <select class="" name="pizza-type" placeholder="Pizza Flavour">
                 <optgroup label="Meaty-Pizzas">
-                  <option value="">Pepperoni Pizza</option>
-                  <option value="">Sausage & Bacon Pizza</option>
-                  <option value="">Proscuito Pizza</option>
+                  <option value="">Pepperoni</option>
+                  <option value="">Sausage & Bacon</option>
+                  <option value="">Proscuito</option>
                 </optgroup>
                 <optgroup label="Veggie-Pizzas">
                   <option value="">Farm House</option>
@@ -98,22 +98,24 @@
                   <option value="">Mexican Green Wave</option>
                 </optgroup>
                 <optgroup label="Cheesy-Pizzas">
-                  <option value="">Ricota Pizza</option>
-                  <option value="">Cheddar Cheese Pizza</option>
-                  <option value="">Mozzarella Cheese Pizza</option>
+                  <option value="">Ricota</option>
+                  <option value="">Cheddar Cheese</option>
+                  <option value="">Mozzarella Cheese</option>
                 </optgroup>
               </select>
               <div class="form-group">
-                <label for="pizza-size">Select Prefered size:</label>
+                <label for="pizza-size">Select size:</label>
                 <select class="pizza-size" name="pizza-size">
+                  <option value="" disabled selected>Pizza Size</option>
                   <option value="">Large -- Ksh.1200</option>
                   <option value="">Medium -- Ksh.1000</option>
                   <option value="">Small -- Ksh.800</option>
                 </select>
               </div>
               <div class="form-group">
-                <label for="pizza-crust">Select Prefered Crust</label>
+                <label for="pizza-crust">Select Crust</label>
                 <select class="pizza-crust" name="pizza-size">
+                  <option value="" disabled selected>Pizza Crust</option>
                   <option value="">Plain -- Ksh.0</option>
                   <option value="">Crispy -- Ksh.150</option>
                   <option value="">Stuffed -- Ksh.200</option>
@@ -121,16 +123,34 @@
                 </select>
               </div>
               <div class="form-group">
-                <label for="pizza-toppings">Would you like any toppings</label>
-                <select class="pizza-toppings" name="pizza-size">
-                  <option value="">Crispy</option>
-                  <option value="">Stuffed</option>
-                  <option value="">Gluten-free</option>
-                </select>
+                <label for="pizza-toppings">Select Toppings at Ksh.50 each</label>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" class="custom-control-input" id="sausage" value="sausage" name="toppings">
+                  <label class="custom-control-label" for="Sausage">Sausage</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" class="custom-control-input" id="bacon" value="bacon" name="toppings">
+                  <label class="custom-control-label" for="Bacon">Bacon</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" class="custom-control-input" id="mushrooms" value="mushrooms" name="toppings">
+                  <label class="custom-control-label" for="Mushrooms">Mushrooms</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" class="custom-control-input" id="olives" value="olives" name="toppings">
+                  <label class="custom-control-label" for="Mushrooms">Olives</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" class="custom-control-input" id="anchovies" value="anchovies" name="toppings">
+                  <label class="custom-control-label" for="Mushrooms">Anchovies</label>
+                </div>
+                <div class="custom-control custom-checkbox custom-control-inline">
+                  <input type="checkbox" class="custom-control-input" id="garlic" value="garlic" name="toppings">
+                  <label class="custom-control-label" for="Mushrooms">Garlic</label>
+                </div>
               </div>
+              <button type="submit" class="btn proceed">Proceed</button
             </div>
-
-            </select>
           </form>
         </div>
       </div>
