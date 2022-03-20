@@ -30,3 +30,7 @@ body {
   width: auto;
   bottom:auto;
 }
+
+.hide {
+  display: none;
+}
