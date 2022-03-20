@@ -1,7 +1,6 @@
 //Business logic
 
 function getPizzaOrder(number, flavour, size, crust, topping, total) {
-  this.number = number;
   this.flavour = flavour;
   this.size = size;
   this.crust = crust;
@@ -10,7 +9,6 @@ function getPizzaOrder(number, flavour, size, crust, topping, total) {
 }
 $(document).ready(function() {
   $("button.add-pizza").click(function () {
-    let number = 1;
     let flavour = $(".flavour option:selected").val();
     let size = $("#size option:selected").val();
     let crust = $("#crust option:selected").val();
@@ -21,43 +19,31 @@ $(document).ready(function() {
   topping.join(", "));
 
 //Compute order price
-  let price, totalPrice;
-    switch (size) {
-      case size = "large":
-        price = 1200;
-        if (crust === "plain") {
-          totalPrice = (price * number);
-        }else if (crust === "crispy") {
-          totalPrice = ((price +150) * number);
-        }else if (crust === "stuffed") {
-          totalPrice = ((price + 200) * number);
-        }else {
-          totalPrice = ((price + 200) * number);
-        }
-        break;
-      case size = "medium":
-        price = 1000;
-        if (crust === "plain") {
-          totalPrice = (price * number);
-        }else if (crust === "crispy") {
-          totalPrice = ((price +150) * number);
-        }else if (crust === "stuffed") {
-          totalPrice = ((price + 200) * number);
-        }else {
-          totalPrice = ((price + 200) * number);
-        }
-        break;
-      case size = "regular":
-        price = 800;
-        if (crust === "plain") {
-          totalPrice = (price * number);
-        }else if (crust === "crispy") {
-          totalPrice = ((price +150) * number);
-        }else if (crust === "stuffed") {
-          totalPrice = ((price + 200) * number);
-        }else {
-          totalPrice = ((price + 200) * number);
-        }
-        break;
-  });
+  switch (size) {
+    case "0":
+      price = 0;
+    case "large":
+      price = 1200;
+    break;
+    case "medium":
+      price = 1000;
+    break;
+    case "small":
+      price = 800;
+    break;
+  }
+  switch (crust) {
+    case "plain":
+      price = 0;
+    case "crispy":
+      price = 150;
+    break;
+    case "stuffed":
+      price = 200;
+    break;
+    case "gluten-free":
+      price = 200;
+    break;
+  }
+  let topping_value = topping.length * 50;
 });
