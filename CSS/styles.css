@@ -1,19 +1,32 @@
 body {
-  background-image: url('../images/background.jpg');
+  background-image: url('.../images/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
 }
 
-.pizza-text {
+
+.navbar {
+  background: rgba(0,0,0,0.5)
+}
+
+.navbar-brand {
+  margin-left: 12%;
+}
+
+.nav-item {
+  margin-left: 100px;
+}
+
+.carousel-caption {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
+  text-align:center;
   padding: 10px;
   margin: 1px;
   border: 1px;
-}
-
-.slide {
-  margin: 0px;
-  border: 0px;
+  top: 36%;
+  left: 25%;
+  width: auto;
+  bottom:auto;
 }
