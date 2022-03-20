@@ -1,8 +1,9 @@
 //Business logic
 var sizePrice, crustPrice;
 let total = 0;
-function Pizzaorder(number, flavour, size, crust, topping, total) {
-  this.flavour = flavour;
+
+function Pizzaorder(type, size, crust, topping, total) {
+  this.type = type;
   this.size = size;
   this.crust = crust;
   this.topping = topping;
@@ -12,8 +13,8 @@ $(document).ready(function() {
 
   $("button.add-pizza").click(function(event) {
     event.preventDefault();
-    let pizzaFlavour = $(".pizza-type option:selected").val();
-    let pizzaSize = $(".pizza-size option:selected").val();
+    let pizzaType = $(".pizza-type").val();
+    let pizzaSize = $(".pizza-size").val();
     let pizzaCrust = $(".pizza-crust").val();
     let pizzaTopping = [];
     $.each($("input[name='toppings']:checked"), function(){
@@ -22,31 +23,42 @@ $(document).ready(function() {
   pizzaTopping.join(", ");
 //Compute order price
   switch (pizzaSize) {
-    case "large":
+    case "Large":
       sizePrice = 1200;
     break;
-    case "medium":
+    case "Medium":
       sizePrice = 1000;
     break;
-    case "small":
+    case "Small":
       sizePrice = 800;
     break;
   }
   switch (pizzaCrust) {
-    case "plain":
+    case "Plain":
       crustPrice = 0;
-    case "crispy":
+    case "Crispy":
       crustPrice = 150;
     break;
-    case "stuffed":
+    case "Stuffed":
       crustPrice = 200;
     break;
-    case "gluten-free":
+    case "Gluten-free":
       crustPrice = 200;
     break;
   }
-  let topping_value = pizzaTopping.length * 50;
+  let toppingPrice = pizzaTopping.length * 50;
 
+  totalPrice = sizePrice + crustPrice + toppingPrice;
+
+  var newOrder = new Pizzaorder(pizzaType, pizzaSize, pizzaCrust, pizzaTopping, totalPrice);
+
+  $("#orders-made").append(
+    '<tr><td id="pizzatype">'+newOrder.type +
+    '</td><td id="pizzasize">' + newOrder.size +
+    '</td><td id="pizzacrust">'+newOrder.crust +
+    '</td><td id="pizzatopping">'+newOrder.topping+
+    '</td><td id="total">'+newOrder.total+
+    '</td></tr>');
 //functions
   $("button.add-pizza").click(function() {
     $("button.add-pizza").hide();
