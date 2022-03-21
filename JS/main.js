@@ -11,8 +11,11 @@ function Pizzaorder(type, size, crust, topping, total) {
 }
 $(document).ready(function() {
 
-  $("button.add-pizza").click(function(event) {
+  $("button#add-pizza").click(function(event) {
     event.preventDefault();
+    if($(".pizza-type").val("") || $(".pizza-size").val("") || $(".pizza-crust").val("")) {
+      alert("Select Pizza type")
+      }else {}
     let pizzaType = $(".pizza-type").val();
     let pizzaSize = $(".pizza-size").val();
     let pizzaCrust = $(".pizza-crust").val();
@@ -52,18 +55,24 @@ $(document).ready(function() {
 
   var newOrder = new Pizzaorder(pizzaType, pizzaSize, pizzaCrust, pizzaTopping, totalPrice);
 
-  $("#orders-made").append(
-    '<tr><td id="pizzatype">'+newOrder.type +
-    '</td><td id="pizzasize">' + newOrder.size +
-    '</td><td id="pizzacrust">'+newOrder.crust +
-    '</td><td id="pizzatopping">'+newOrder.topping+
-    '</td><td id="total">'+newOrder.total+
-    '</td></tr>');
-//functions
-  $("button.add-pizza").click(function() {
-    $("button.add-pizza").hide();
     $("#description").hide();
     $("#order-details").show();
-  });
+    $("#orders-made").append(
+      '<tr><td id="pizzatype">'+newOrder.type +
+      '</td><td id="pizzasize">' + newOrder.size +
+      '</td><td id="pizzacrust">'+newOrder.crust +
+      '</td><td id="pizzatopping">'+newOrder.topping+
+      '</td><td id="total">'+newOrder.total+
+      '</td></tr>');
+      $("#order-details").show();
+    $("button.add-pizza").hide();
+
+  function resetFields() {
+    let pizzaType = $(".pizza-type").val("");
+    let pizzaSize = $(".pizza-size").val("");
+    let pizzaCrust = $(".pizza-crust").val("");
+    let pizzaTopping = $(".pizza-topping").prop("checked", false);
+  }
+  resetFields()
   });
 });

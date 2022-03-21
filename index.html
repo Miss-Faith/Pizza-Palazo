@@ -120,31 +120,31 @@
                 <div class="form-group">
                   <label for="pizza-toppings">Pizza Toppings at Ksh.50 each</label>
                   <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="sausage" value="Sausage" name="toppings">
+                    <input type="checkbox" class="custom-control-input pizza-topping" id="sausage" value="Sausage" name="toppings">
                     <label class="custom-control-label" for="Sausage">Sausage</label>
                   </div>
                   <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="bacon" value="Bacon" name="toppings">
+                    <input type="checkbox" class="custom-control-input pizza-topping" id="bacon" value="Bacon" name="toppings">
                     <label class="custom-control-label" for="Bacon">Bacon</label>
                   </div>
                   <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="mushrooms" value="Mushrooms" name="toppings">
+                    <input type="checkbox" class="custom-control-input pizza-topping" id="mushrooms" value="Mushrooms" name="toppings">
                     <label class="custom-control-label" for="Mushrooms">Mushrooms</label>
                   </div>
                   <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="olives" value="Olives" name="toppings">
+                    <input type="checkbox" class="custom-control-input pizza-topping" id="olives" value="Olives" name="toppings">
                     <label class="custom-control-label" for="Olives">Olives</label>
                   </div>
                   <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="anchovies" value="Anchovies" name="toppings">
+                    <input type="checkbox" class="custom-control-input pizza-topping" id="anchovies" value="Anchovies" name="toppings">
                     <label class="custom-control-label" for="anchovies">Anchovies</label>
                   </div>
                   <div class="custom-control custom-checkbox custom-control-inline">
-                    <input type="checkbox" class="custom-control-input" id="garlic" value="Garlic" name="toppings">
+                    <input type="checkbox" class="custom-control-input pizza-topping" id="garlic" value="Garlic" name="toppings">
                     <label class="custom-control-label" for="garlic">Garlic</label>
                   </div>
                 </div>
-                <button type="submit" class="btn add-pizza">Add Pizza</button>
+                <button type="submit" class="btn" id="add-pizza">Add Pizza</button>
               </div>
             </form>
           </div>
@@ -187,6 +187,11 @@
               <p id="totalbill"></p>
               <p id="addedprice">Delivery will cost sh. 150</p>
               <p id="finallmessage"></p>
+            </div>
+            <button class="btn btn-orange" id="add-pizza">Add Pizza</button>
+            <button class="btn btn-orange" id="checkout">Checkout</button>
+            <div class="col-7">
+
             </div>
           </div>
         </div>
