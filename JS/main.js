@@ -1,5 +1,5 @@
 //Business logic
-var sizePrice, crustPrice;
+var sizePrice, crustPrice, toppingValue;
 let total = 0;
 
 function Pizzaorder(type, size, crust, topping, total) {
@@ -25,12 +25,15 @@ $(document).ready(function() {
   switch (pizzaSize) {
     case "Large":
       sizePrice = 1200;
+      toppingValue = 70;
     break;
     case "Medium":
       sizePrice = 1000;
+      toppingValue = 50;
     break;
     case "Small":
       sizePrice = 800;
+      toppingValue = 30;
     break;
   }
   switch (pizzaCrust) {
@@ -46,7 +49,7 @@ $(document).ready(function() {
       crustPrice = 200;
     break;
   }
-  let toppingPrice = pizzaTopping.length * 50;
+  let toppingPrice = pizzaTopping.length * toppingValue;
 
   totalPrice = sizePrice + crustPrice + toppingPrice;
 
@@ -61,15 +64,15 @@ $(document).ready(function() {
       '</td><td id="pizzatopping">'+newOrder.topping+
       '</td><td id="total">'+newOrder.total+
       '</td></tr>');
-      $("#order-details").show();
     $("button.add-pizza").hide();
-
-  function resetFields() {
-    let pizzaType = $(".pizza-type").val("");
-    let pizzaSize = $(".pizza-size").val("");
-    let pizzaCrust = $(".pizza-crust").val("");
-    let pizzaTopping = $(".pizza-topping").prop("checked", false);
-  }
-  resetFields()
   });
+
+    jQuery("#delivery").change(function() {
+        if ($(this).prop('checked')) {
+            alert("We charge an additional Ksh.200 for deliveries."); //checked
+        }
+        else {
+            return false;
+        }
+    });
 });

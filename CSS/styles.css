@@ -2,13 +2,15 @@ body {
   height: auto;
   width: 100%;
   background-image: url(../images/Background.jpg);
+  font-family: 'Arima Madurai', cursive;
 }
+
 .navbar {
   background: rgba(0,0,0,0.6)
 }
 
-.container1 {
-  height: 60vh;
+ngb-carousel:focus {
+    outline: none;
 }
 
 .navbar-brand {
@@ -46,6 +48,10 @@ body {
 .btn {
   background-color: rgba(254,87,18,1);
   margin-top: 8px;
+}
+
+<table {
+  color: white;
 }
 
 .col-7 {
