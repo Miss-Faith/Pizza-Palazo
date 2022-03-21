@@ -9,12 +9,14 @@ body {
   background: rgba(0,0,0,0.6)
 }
 
-ngb-carousel:focus {
-    outline: none;
+.navbar-brand {
+  color: white;
+  font-size: 5vw;
+  margin-left: 2%;
 }
 
-.navbar-brand {
-  margin-left: 12%;
+ngb-carousel:focus {
+    outline: none;
 }
 
 .nav-item {

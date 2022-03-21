@@ -84,16 +84,21 @@ $(document).ready(function() {
       let clientNumber = $(".client-number").val();
       let clientLocation = $(".client-location").val();
 
-    //  $("#location").hide();
-  //    $("#order-details").show();
+      $("#location").hide();
+      $("#description").hide();
+      $("#order-details").show();
     });
 
     $("button#checkout").click(function(event) {
       event.preventDefault();
-      let deliveryFee = 150;
-      let clientName = $(".client-name").val();
-      let clientNumber = $(".client-number").val();
-      let clientLocation = $(".client-location").val();
+      $("#orders-made").append(
+        '<tr><td id="pizzatype">'+newOrder.type +
+        '</td><td id="pizzasize">' + newOrder.size +
+        '</td><td id="pizzacrust">'+newOrder.crust +
+        '</td><td id="pizzatopping">'+newOrder.topping+
+        '</td><td id="total">'+newOrder.total+
+        '</td></tr>');
+
 
       //$("#location").hide();
       //$("#order-details").show();
