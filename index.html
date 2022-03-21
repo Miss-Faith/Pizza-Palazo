@@ -147,7 +147,7 @@
                   <label class="custom-control-label" for="garlic">Garlic</label>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary add-pizza" id="add-pizza">Add Pizza</button>
+              <button type="submit" class="submit btn btn-primary add-pizza" id="add-pizza">Add Pizza</button>
             </div>
             </form>
             <br>
@@ -202,23 +202,23 @@
 
         <div class="hide col-7" id="location">
           <p>Provide delivery details</p>
-          <form method="post">
+          <form class="submit" method="post">
             <div class="form-group">
-              <label for="phone-name">Name</label>
-              <input class="client-name" type="text" name="name" value="name" required>
+              <label for="client-name">Name</label>
+              <input id="client-name" type="text" name="client-name" value="" placeholder="Name" required>
             </div>
             <br>
             <div class="form-group">
-              <label for="phone-number">Phone number</label>
-              <input class="client-number" type="tel" name="phone-number" value="phone-number" required>
+              <label for="client-number">Phone Number</label>
+              <input id="client-number" type="number" name="client-number" value="" placeholder="Phone Number" min="700000000" required>
             </div>
             <br>
-            <div class="form-group">
-              <label for="location">Location</label>
-              <input class="client-location" type="" name="phone-number" value="location" required>
+            <div class="">
+              <label for="client-location">Location</label>
+              <input id="client-location" type="text" name="client-location" value="" placeholder="Location" required>
             </div>
             <br>
-            <button type="submit" class="btn btn-primary add-location" name="button" id="add-location">Add Location</button>
+            <button type="submit" name="button" class="submit-button btn btn-primary">Add Location</button>
           </form>
         </div>
       </div>
@@ -249,7 +249,7 @@
               <div class="row">
                 <textarea class="col" name="message" rows="5" cols="68" placeholder="Message ..."></textarea>
               </div>
-              <button type="submit" name="button" class="submit-button border-0">Submit</button>
+              <button type="submit" id="submit-button" name="button" class="submit-button border-0">Submit</button>
             </form>
             <br>
           </div>

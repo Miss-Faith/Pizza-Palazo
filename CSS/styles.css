@@ -73,7 +73,7 @@ ngb-carousel:focus {
   position: relative;
   right: -360%;
 }
-.submit-button {
+#submit-button {
   position: relative;
   left: 45%;
 }
