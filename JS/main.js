@@ -67,9 +67,11 @@ $(document).ready(function() {
     $("button.add-pizza").hide();
   });
 
-    jQuery("#delivery").change(function() {
+    $("#delivery").change(function() {
         if ($(this).prop('checked')) {
-            alert("We charge an additional Ksh.200 for deliveries."); //checked
+            alert("We charge an additional Ksh.200 for deliveries.");
+            $("#order-details").hide();
+            $("#location").show();
         }
         else {
             return false;
