@@ -35,10 +35,17 @@ body {
 .make-order-details {
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
-  width: 80%
+  width: 76%;
+  position: relative;
+  left: 12%;
 }
 .btn {
   background-color: rgba(254,87,18,1);
+}
+
+.row {
+  position: relative;
+  left: 4%;
 }
 
 #contact-us {
