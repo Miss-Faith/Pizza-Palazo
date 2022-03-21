@@ -1,13 +1,11 @@
 body {
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
+  height: auto;
+  width: 100%;
 }
-
-
 .navbar {
-  background: rgba(0,0,0,0.5)
+  background: rgba(0,0,0,0.6)
 }
+
 
 .navbar-brand {
   margin-left: 12%;
@@ -17,12 +15,12 @@ body {
   margin-left: 100px;
 }
 
-.carousel-caption {
+.pizza-text {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   text-align:center;
-  padding: 10px;
-  margin: 1px;
+  padding: 20px;
+  margin: 10px;
   border: 1px;
   top: 36%;
   left: 25%;
@@ -32,4 +30,26 @@ body {
 
 .hide {
   display: none;
+}
+
+.make-order-details {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  width: 80%
+}
+.btn {
+  background-color: rgba(254,87,18,1);
+}
+
+#contact-us {
+  background-image: url(../images/logo.jpg);
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+.footer {
+  background-image: url(../images/Background.jpg);
+  background-size: contain;
+  width: 100%;
+  height: auto;
 }
