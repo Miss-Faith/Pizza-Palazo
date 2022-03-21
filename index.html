@@ -73,7 +73,7 @@
     </div>
     <br>
 <!--Order Menu-->
-    <div class="Container-fluid make-order-details">
+    <div class="Container-fluid make-order-details text-center">
       <div>
         <h2>Place your Order Here</h2>
       </div>
@@ -197,7 +197,7 @@
 <!--Contact Us-->
     <div class="container-fluid d-flex justify-content-center" id="contact-us">
       <div>
-        <h2>Contact Us</h2>
+        <h2 class="text-center">Contact Us</h2>
         <div class="row">
           <div class="col-6">
             <h6>Reach us on</h6>
@@ -206,19 +206,19 @@
             <p>Monday - Saturday: 9am - 9pm<br>Sunday & Public holidays: 9am - 4pm</p>
           </div>
           <div class="col-6">
-            <form class="submit" action="index.html" method="post">
+            <form class="submit" method="post">
               <div class="row">
-                <div class="col-3">
-                  <input type="text" name="name" value="" placeholder="Name" required>
+                <div class="col-1">
+                  <input id="name" type="text" name="name" value="" placeholder="Name" required>
                 </div>
-                <div class="col-3">
-                  <input type="email" name="name" value="" placeholder="Email" required>
+                <div class="col-2">
+                  <input id="email" "type="email" name="name" value="" placeholder="Email" required>
                 </div>
               </div>
               <div class="row">
-                <textarea class="col-10" name="message" rows="5" cols="40" placeholder="Message ..."></textarea>
+                <textarea class="col" name="message" rows="5" cols="60" placeholder="Message ..."></textarea>
               </div>
-              <button type="submit" name="button" class="border-0">Submit</button>
+              <button type="submit" name="button" class="submit-button border-0">Submit</button>
             </form>
           </div>
         </div>

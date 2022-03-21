@@ -45,7 +45,7 @@ body {
 
 .row {
   position: relative;
-  left: 4%;
+  left: 2%;
 }
 
 #contact-us {
@@ -53,6 +53,18 @@ body {
   background-size: cover;
   width: 100%;
   height: auto;
+}
+#name {
+  position: relative;
+  left: -110%;
+}
+#email {
+  position: relative;
+  right: -370%;
+}
+.submit-button {
+  position: relative;
+  left: 45%;
 }
 .footer {
   background-image: url(../images/Background.jpg);

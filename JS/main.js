@@ -13,9 +13,6 @@ $(document).ready(function() {
 
   $("button#add-pizza").click(function(event) {
     event.preventDefault();
-    if($(".pizza-type").val("") || $(".pizza-size").val("") || $(".pizza-crust").val("")) {
-      alert("Select Pizza type")
-      }else {}
     let pizzaType = $(".pizza-type").val();
     let pizzaSize = $(".pizza-size").val();
     let pizzaCrust = $(".pizza-crust").val();
