@@ -1,4 +1,5 @@
-# [Project Portfolio Landing Page](https://miss-faith.github.io/Pizza-Palazzo/)
+# [Pizza Palazzo Landing Page](https://miss-faith.github.io/Pizza-Palazzo/)
+A web application that allows customers to order different sizes of pizzas with one or more toppings.
 #### By [Faith Mwangi](https://github.com/miss-faith)
 ### Description
 A landing page for Delani Studio
