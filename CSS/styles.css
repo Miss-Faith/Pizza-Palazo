@@ -1,11 +1,15 @@
 body {
   height: auto;
   width: 100%;
+  background-image: url(../images/Background.jpg);
 }
 .navbar {
   background: rgba(0,0,0,0.6)
 }
 
+.container1 {
+  height: 60vh;
+}
 
 .navbar-brand {
   margin-left: 12%;
@@ -33,7 +37,7 @@ body {
 }
 
 .make-order-details {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(31,34,41);
   color: white;
   width: 76%;
   position: relative;
@@ -41,11 +45,12 @@ body {
 }
 .btn {
   background-color: rgba(254,87,18,1);
+  margin-top: 8px;
 }
 
-.row {
+.col-7 {
   position: relative;
-  left: 2%;
+  right: 2.5%;
 }
 
 #contact-us {
@@ -71,4 +76,8 @@ body {
   background-size: contain;
   width: 100%;
   height: auto;
+  color: white;
+}
+.fa-brands {
+  margin: 20px;
 }
