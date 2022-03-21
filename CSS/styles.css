@@ -67,11 +67,11 @@ ngb-carousel:focus {
 }
 #name {
   position: relative;
-  left: -110%;
+  left: -90%;
 }
 #email {
   position: relative;
-  right: -370%;
+  right: -360%;
 }
 .submit-button {
   position: relative;

@@ -77,4 +77,14 @@ $(document).ready(function() {
             return false;
         }
     });
+    $("button#add-location").click(function(event) {
+      event.preventDefault();
+      let deliveryFee = 150;
+      let clientName = $(".client-name").val();
+      let clientNumber = $(".client-number").val();
+      let clientLocation = $(".client-location").val();
+
+      $("#location").hide();
+      $("#order-details").show();
+    });
 });
