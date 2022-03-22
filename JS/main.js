@@ -11,6 +11,9 @@ function Pizzaorder(type, size, crust, topping, total) {
 }
 $(document).ready(function() {
 
+  $("button#add-pizza").click(function(event) {
+    event.preventDefault();
+
     let pizzaType = $(".pizza-type").val();
     let pizzaSize = $(".pizza-size").val();
     let pizzaCrust = $(".pizza-crust").val();
@@ -25,7 +28,7 @@ $(document).ready(function() {
   let clientNumber = $("#client-number").val();
   let clientLocation = $("#client-location").val();
 
-//Compute order price
+  //Compute order price
   switch (pizzaSize) {
     case "Large":
       sizePrice = 1200;
@@ -62,8 +65,6 @@ $(document).ready(function() {
 
   var newOrder = new Pizzaorder(pizzaType, pizzaSize, pizzaCrust, pizzaTopping, totalPrice);
 
-  $("button#add-pizza").click(function(event) {
-    event.preventDefault();
     $("#description").hide();
     $("#order-details").show();
     $("#orders-made").append(
@@ -78,6 +79,7 @@ $(document).ready(function() {
 
     $("#delivery").change(function() {
         if ($(this).prop('checked')) {
+          $("#location").show();
           alert("We charge an additional Ksh.150 for deliveries.");
           return false;
         }
@@ -86,19 +88,23 @@ $(document).ready(function() {
         }
     });
 
+    $("button#add-location").click(function(event) {
+       event.preventDefault();
+       return false;
+       $("#location").hide();
+       $("button#add-pizza").hide()
+       $("button#checkout").show()
+       return false;
+    });
+
     $("button#checkout").click(function(event) {
       event.preventDefault();
       $("button#add-pizza").hide()
       $("button#checkout").hide()
       $("fieldset").hide()
         if ($("#delivery").prop('checked')) {
-          $("#location").show();
-          $("button#add-location").click(function(event) {
-             event.preventDefault();
-             $("#final-message").append(`Hi + ${clientName} +  your total order is Ksh.${checkoutTotalWithDelivery} +. Delivery will be made to  + ${clientLocation} +  in 30 mins.`);
-             return false;
-           });
+          $("#final-message").append(`Hi, your total order is Ksh.${checkoutTotal}. Your order will be delivered in 30 mins.`)
         }else
-          $("#final-message").append(`Hi, your total order is Ksh.${checkoutTotal} . Your order will be ready for pick up in 30 mins.`);
+          $("#final-message").append(`Hi, your total order is Ksh.${checkoutTotalWithDelivery}. Your order will be ready for pick up in 30 mins.`);
     });
 });
