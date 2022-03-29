@@ -1,5 +1,5 @@
 //Business logic
-var sizePrice, crustPrice, toppingValue;
+var sizePrice, crustPrice, toppingValue, totalPrice;
 let total = 0;
 
 function Pizzaorder(type, size, crust, topping, total) {
@@ -9,6 +9,7 @@ function Pizzaorder(type, size, crust, topping, total) {
   this.topping = topping;
   this.total = total;
 }
+
 $(document).ready(function() {
 
   $("button#add-pizza").click(function(event) {
@@ -44,8 +45,6 @@ $(document).ready(function() {
     break;
   }
   switch (pizzaCrust) {
-    case "Plain":
-      crustPrice = 0;
     case "Crispy":
       crustPrice = 150;
     break;
@@ -59,9 +58,8 @@ $(document).ready(function() {
   let toppingPrice = pizzaTopping.length * toppingValue;
 
   totalPrice = sizePrice + crustPrice + toppingPrice;
-  let checkoutTotal =0;
-  checkoutTotal = checkoutTotal + totalPrice;
-  checkoutTotalWithDelivery = checkoutTotal + deliveryFee;
+
+  console.log(totalPrice);
 
   var newOrder = new Pizzaorder(pizzaType, pizzaSize, pizzaCrust, pizzaTopping, totalPrice);
 
@@ -74,12 +72,21 @@ $(document).ready(function() {
       '</td><td id="pizzatopping">'+newOrder.topping+
       '</td><td id="total">'+newOrder.total+
       '</td></tr>');
-    $("button.add-pizza").hide();
-  });
+    $("button.add-pizza").hide()
+
+    // function onClickRemove(deleteButton) {
+    //   let row = deleteButton.parentElement.parentElement;
+    //   row.parentNode.removeChild(row);
+    //   updateSubTotal();
+    // }
+    });
+
 
     $("#delivery").change(function() {
         if ($(this).prop('checked')) {
           $("#location").show();
+          $("button#add-pizza").hide()
+          $("button#checkout").hide()
           alert("We charge an additional Ksh.150 for deliveries.");
           return false;
         }
@@ -90,21 +97,34 @@ $(document).ready(function() {
 
     $("button#add-location").click(function(event) {
        event.preventDefault();
-       return false;
        $("#location").hide();
        $("button#add-pizza").hide()
        $("button#checkout").show()
-       return false;
     });
 
     $("button#checkout").click(function(event) {
       event.preventDefault();
+
       $("button#add-pizza").hide()
       $("button#checkout").hide()
       $("fieldset").hide()
-        if ($("#delivery").prop('checked')) {
-          $("#final-message").append(`Hi, your total order is Ksh.${checkoutTotal}. Your order will be delivered in 30 mins.`)
-        }else
-          $("#final-message").append(`Hi, your total order is Ksh.${checkoutTotalWithDelivery}. Your order will be ready for pick up in 30 mins.`);
-    });
+
+      var numberOfRows = $('#table tr').length;
+      console.log(numberOfRows)
+
+      var table = document.getElementById("table");
+      var checkoutTotal = 0;
+
+      for(var i = 2; i < numberOfRows; i++) {
+        checkoutTotal = checkoutTotal + parseInt(table.rows[i].cells[4].innerText);
+
+        console.log(checkoutTotal);
+      }
+
+      if ($("#delivery").prop('checked')) {
+          $("#final-message").append(`Hi, your total order is Ksh.${checkoutTotal}+150. Your order will be delivered in 30 mins.`)
+      }else {
+          $("#final-message").append(`Hi, your total order is Ksh.${checkoutTotal}. Your order will be ready for pick up in 30 mins.`);
+      };
+  });
 });
