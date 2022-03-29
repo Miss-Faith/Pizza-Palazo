@@ -84,11 +84,7 @@ $(document).ready(function() {
 
     $("#delivery").change(function() {
         if ($(this).prop('checked')) {
-          $("#location").show();
-          $("button#add-pizza").hide()
-          $("button#checkout").hide()
-          alert("We charge an additional Ksh.150 for deliveries.");
-          return false;
+          $("#myModal").modal("show")
         }
         else {
             return false;
