@@ -1,5 +1,5 @@
 //Business logic
-var sizePrice, crustPrice, toppingValue, totalPrice;
+var sizePrice, crustPrice, toppingValue, totalPrice, checkoutTotalWithDelivery;
 let total = 0;
 
 function Pizzaorder(type, size, crust, topping, total) {
@@ -23,11 +23,6 @@ $(document).ready(function() {
        pizzaTopping.push($(this).val());
   });
   pizzaTopping.join(", ");
-
-  let deliveryFee = 150;
-  let clientName = $("#client-name").val();
-  let clientNumber = $("#client-number").val();
-  let clientLocation = $("#client-location").val();
 
   //Compute order price
   switch (pizzaSize) {
@@ -91,16 +86,8 @@ $(document).ready(function() {
         }
     });
 
-    $("button#add-location").click(function(event) {
-       event.preventDefault();
-       $("#location").hide();
-       $("button#add-pizza").hide()
-       $("button#checkout").show()
-    });
-
     $("button#checkout").click(function(event) {
       event.preventDefault();
-
       $("button#add-pizza").hide()
       $("button#checkout").hide()
       $("fieldset").hide()
@@ -113,12 +100,19 @@ $(document).ready(function() {
 
       for(var i = 2; i < numberOfRows; i++) {
         checkoutTotal = checkoutTotal + parseInt(table.rows[i].cells[4].innerText);
-
-        console.log(checkoutTotal);
+        checkoutTotalWithDelivery = checkoutTotal + 150;
       }
 
       if ($("#delivery").prop('checked')) {
-          $("#final-message").append(`Hi, your total order is Ksh.${checkoutTotal}+150. Your order will be delivered in 30 mins.`)
+        $("#locationModal").modal('show');
+        $("#submit").click(function () {
+          var clientName = $("#client-name").val();
+          var clientNumber = $("#client-number").val();
+          var clientLocation = $("#client-location").val();
+
+        $("#final-message").append(`Hi ${clientName}, your total order is Ksh.${checkoutTotalWithDelivery}. Your order will be delivered to ${clientLocation} in 30 mins.`)
+        $("#locationModal").modal('hide');
+          });
       }else {
           $("#final-message").append(`Hi, your total order is Ksh.${checkoutTotal}. Your order will be ready for pick up in 30 mins.`);
       };

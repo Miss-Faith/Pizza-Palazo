@@ -201,35 +201,15 @@
             </div>
             <button type="submit" class="submit btn btn-orange" id="add-pizza">Add Pizza</button>
             <button type="submit" class="submit btn btn-orange" id="checkout">Checkout</button>
-            <h3 id="final-message">Share our happiness.<br></h3>
-          </div>
-
-          <div class="hide" id="location">
-            <p>Provide delivery details</p>
-            <form action="">
-              <div class="form-group">
-                <label for="client-name">Name</label>
-                <input id="client-name" type="text" name="client-name" value="" placeholder="Your Name" required>
-              </div>
-              <div class="form-group">
-                <label for="client-number">Phone Number</label>
-                <input id="client-number" type="number" name="client-number" value="" placeholder="Phone Number" min="700000000" required>
-              </div>
-              <div class="">
-                <label for="client-location">Location</label>
-                <input id="client-location" type="text" name="client-location" value="" placeholder="Your Location" required>
-              </div>
-              <br>
-              <button type="submit" class="submit btn btn-primary">Add Location</button>
-            </form>
+            <h3 id="final-message">Share the happiness.<br></h3>
           </div>
         </div>
       </div>
     </div>
     <br>
 
+    <!-- Modal - Delivery cost alert -->
     <div class="container">
-      <!-- Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-dialog">
           <!-- Modal content-->
@@ -249,7 +229,26 @@
       </div>
     </div>
 
-    <!-- off canvas  -->
+<!-- Modal - Collect delivery details -->
+    <div class="container">
+      <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+<!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-title">Delivery Details</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+              Name: <input type="text" name="name" id="client-name" required><br><br>
+              Phone Number: <input type="number" name="marks" id="client-number" min="0700000000" required><br><br>
+              location: <input type="text" name="location" id="client-location" required> <br><br>
+              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#locationModal" id="submit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <!--Contact Us-->
     <div class="container-fluid d-flex justify-content-center" id="contact-us">
