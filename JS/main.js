@@ -105,7 +105,8 @@ $(document).ready(function() {
 
       if ($("#delivery").prop('checked')) {
         $("#locationModal").modal('show');
-        $("#submit").click(function () {
+        $("#submit").click(function (event) {
+          event.preventDefault();
           var clientName = $("#client-name").val();
           var clientNumber = $("#client-number").val();
           var clientLocation = $("#client-location").val();

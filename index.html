@@ -237,13 +237,16 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title" id="modal-title">Delivery Details</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
             </div>
             <div class="modal-body">
-              Name: <input type="text" name="name" id="client-name" required><br><br>
-              Phone Number: <input type="number" name="marks" id="client-number" min="0700000000" required><br><br>
-              location: <input type="text" name="location" id="client-location" required> <br><br>
-              <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#locationModal" id="submit">Submit</button>
+              <form>
+                <div class="form-group">
+                Name: <input type="text" name="name" id="client-name" required><br><br>
+                Phone Number: <input type="number" name="marks" id="client-number" min="0700000000" required><br><br>
+                location: <input type="text" name="location" id="client-location" required> <br><br>
+                </div>
+                <button type="submit" class="btn btn-success btn-sm" data-toggle="modal" data-target="#locationModal" id="submit">Submit</button>
+              </form>
             </div>
           </div>
         </div>
